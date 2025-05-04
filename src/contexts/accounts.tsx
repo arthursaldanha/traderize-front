@@ -13,15 +13,15 @@ export type Account = {
   market: string[];
   currency: string;
   platform: string;
-  is_prop_firm: boolean;
+  isPropFirm: boolean;
   broker: string;
-  initial_balance: number;
-  current_balance: number;
-  floating_balance: number;
+  initialBalance: number;
+  currentBalance: number;
+  floatingBalance: number;
   credits: number | null;
   disabled: boolean;
-  created_at: string;
-  updated_at: string;
+  createdAt: string;
+  updatedAt: string;
 };
 
 type AccountsContextType = {

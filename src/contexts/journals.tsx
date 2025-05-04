@@ -61,6 +61,7 @@ export const JournalsProvider = ({
       const { data } = await api.get("/journals");
       return data;
     },
+    enabled: false, // TODO REMOVE
   });
 
   const createMutation = useMutation({

@@ -20,11 +20,12 @@ import {
   IconTool,
   IconUsers,
 } from "@tabler/icons-react";
+import { AudioWaveform, Command, GalleryVerticalEnd } from "lucide-react";
 
 // import { NavDocuments } from "@/components/nav-documents";
-import { NavMain } from "@/components/nav-main";
-import { NavSecondary } from "@/components/nav-secondary";
-import { NavUser } from "@/components/nav-user";
+import { NavMain } from "@/app/(private)/components/nav-main";
+import { NavUser } from "@/app/(private)/components/nav-user";
+import { NavSecondary } from "@/app/(private)/components/nav-secondary";
 import {
   Sidebar,
   SidebarContent,
@@ -34,8 +35,8 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { TeamSwitcher } from "@/components/team-switcher";
-import { AudioWaveform, Command, GalleryVerticalEnd } from "lucide-react";
+import { AccountSwitcher } from "@/app/(private)/components/account-switcher";
+import { useAccounts } from "@/contexts";
 
 const data = {
   user: {
@@ -187,6 +188,8 @@ const data = {
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const { accounts } = useAccounts();
+
   return (
     <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>
@@ -197,7 +200,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               className="data-[slot=sidebar-menu-button]:!p-1.5"
               tooltip="Selecione uma conta"
             >
-              <TeamSwitcher teams={data.teams} />
+              <AccountSwitcher accounts={accounts} />
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>

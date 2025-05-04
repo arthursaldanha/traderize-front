@@ -1,9 +1,9 @@
-import { ChartAreaInteractive } from "@/components/chart-area-interactive";
-import { DataTable } from "@/components/data-table";
-import { SectionCards } from "@/components/section-cards";
-import { SiteHeader } from "@/components/site-header";
+import { DataTable } from "@/app/(private)/components/data-table";
+import { SiteHeader } from "@/app/(private)/components/site-header";
+import { SectionCards } from "@/app/(private)/components/section-cards";
+import { ChartAreaInteractive } from "@/app/(private)/components/chart-area-interactive";
 
-import data from "./data.json";
+import data from "@/app/(private)/dashboard/data.json";
 
 export default function Page() {
   return (

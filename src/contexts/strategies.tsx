@@ -46,6 +46,7 @@ export function StrategiesProvider({
       const response = await api.get("/api/strategies");
       return response.data;
     },
+    enabled: false, // TODO REMOVE
   });
 
   const createMutation = useMutation({
@@ -57,8 +58,8 @@ export function StrategiesProvider({
     },
     onSuccess: (newStrategy) => {
       queryClient.setQueryData<Strategy[]>(["strategies"], (old = []) => [
-        newStrategy,
         ...old,
+        newStrategy,
       ]);
       toast.success("Estratégia criada com sucesso!");
     },
